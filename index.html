@@ -5,27 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    
+    <title>Zoom Helper</title>
   </head>
   <body>
-    <template id="li_template">
-      <li>
-        <a>
-          <h3 class="title">Tab Title</h3>
-          <p class="pathname">Tab Pathname</p>
-        </a>
-      </li>
-    </template>
+    <div class="container">
+      <input
+        type="text"
+        name=""
+        class="name"
+        placeholder="Enter Zoom Room Name"
+      />
+      <input type="text" class="link" placeholder="Enter Zoom Link" />
+      <button class="submit" type="submit">Add Zoom Link</button>
 
-    <h1>Hello World</h1>
-    
-    <input type="text" name="" class="name" placeholder="Enter Zoom Room Name"/>
-    <input type="text" class="link" placeholder="Enter your link"/>
-    <button class="submit">Add Zoom Link</button>
-    
-    <div class="zoom-links"></div>
+      <ul class="zoom-links"></ul>
+    </div>
 
     <script src="./main.js"></script>
   </body>
-
 </html>
