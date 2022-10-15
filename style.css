@@ -92,6 +92,11 @@ p {
   color: red;
   border: none;
 }
+
+.navigation {
+  background-color: transparent;
+  font-size: 20px;
+}
 /* h3,
 p {
   margin: 0;

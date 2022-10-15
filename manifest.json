@@ -8,7 +8,8 @@
   },
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "history"
   ],
   "background": {
     "service_worker": "background.js"

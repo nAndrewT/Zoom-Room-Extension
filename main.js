@@ -6,7 +6,6 @@ const button = document.querySelector('.submit');
 
 document.addEventListener('DOMContentLoaded', () => {
   const storedLinks = localStorage.getItem('links');
-  console.log(storedLinks);
   if (storedLinks) {
     renderLinks(JSON.parse(storedLinks));
   }
@@ -50,38 +49,23 @@ function renderLinks(links) {
     listItem.append(newLink);
     
     listItem.append(deleteButton)
-    // deleteButton.addEventListener('click', deleteButton.parent.remove())
 
     zoomLinks.appendChild(listItem);
-  //   const deleteButtons = document.querySelectorAll('.delete-button');
-  //   deleteButtons.forEach(button => {
-  //       console.log(button)
-  //   button.addEventListener('click', (event) => deleteLink(event))
-  // });
-    // deleteButton.onclick = deleteLink(deleteButton);
+
     deleteButton.onclick = function() {
-      console.log(deleteButton.parentElement)
       deleteButton.parentElement.remove();
       const linkID = deleteButton.previousElementSibling.firstChild.innerText;
-      console.log(linkID)
-      for (let i=0; i<5; i++) {
-        
+      // console.log(linkID)
+      for (let i=0; i<5; i++) { 
         if(links[i].name == linkID) {
-          console.log(links[i].name)
+          // console.log(links[i].name)
           links.splice(i, 1)
           break;
         }
       }
-      console.log(links)
+      // console.log(links)
       links = links.reverse();
       localStorage.setItem('links', JSON.stringify(links));
     }
-    // deleteButton.addEventListener('click', deleteButton.parent.remove())
-
   });
 }
-
-// function deleteLink(event) {
-//   console.log(event.parent)
-//   // event.parent.remove();
-// }
