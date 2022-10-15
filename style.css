@@ -77,6 +77,21 @@ p {
   box-shadow: 0px 0px 15px gray;
   border-radius: 5px;
 }
+
+.zoom-link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-button {
+  display: box;
+  height: 100%;
+  font-size: 20px;
+  align-self: center;
+  background-color: transparent;
+  color: red;
+  border: none;
+}
 /* h3,
 p {
   margin: 0;

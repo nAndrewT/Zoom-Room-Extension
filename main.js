@@ -3,6 +3,7 @@ const zoomRoom = document.querySelector('.link');
 const zoomLinks = document.querySelector('.zoom-links');
 const button = document.querySelector('.submit');
 
+
 document.addEventListener('DOMContentLoaded', () => {
   const storedLinks = localStorage.getItem('links');
   console.log(storedLinks);
@@ -27,6 +28,12 @@ function addZoomLink() {
 
 function renderLinks(links) {
   links.reverse().forEach(({ name, link }) => {
+    const deleteButton = document.createElement('button');
+    deleteButton.setAttribute('class', 'delete-button');
+    deleteButton.setAttribute('type', 'submit');
+    deleteButton.innerText = 'X';
+    
+
     const newLink = document.createElement('a');
     const listItem = document.createElement('li');
     const heading = document.createElement('h3');
@@ -41,16 +48,40 @@ function renderLinks(links) {
 
     newLink.append(heading, text);
     listItem.append(newLink);
+    
+    listItem.append(deleteButton)
+    // deleteButton.addEventListener('click', deleteButton.parent.remove())
 
     zoomLinks.appendChild(listItem);
+  //   const deleteButtons = document.querySelectorAll('.delete-button');
+  //   deleteButtons.forEach(button => {
+  //       console.log(button)
+  //   button.addEventListener('click', (event) => deleteLink(event))
+  // });
+    // deleteButton.onclick = deleteLink(deleteButton);
+    deleteButton.onclick = function() {
+      console.log(deleteButton.parentElement)
+      deleteButton.parentElement.remove();
+      const linkID = deleteButton.previousElementSibling.firstChild.innerText;
+      console.log(linkID)
+      for (let i=0; i<5; i++) {
+        
+        if(links[i].name == linkID) {
+          console.log(links[i].name)
+          links.splice(i, 1)
+          break;
+        }
+      }
+      console.log(links)
+      links = links.reverse();
+      localStorage.setItem('links', JSON.stringify(links));
+    }
+    // deleteButton.addEventListener('click', deleteButton.parent.remove())
+
   });
 }
 
-//  <template id='li_template'>
-//    <li>
-//      <a>
-//        <h3 class='title'>Tab Title</h3>
-//        <p class='pathname'>Tab Pathname</p>
-//      </a>
-//    </li>
-//  </template>;
+// function deleteLink(event) {
+//   console.log(event.parent)
+//   // event.parent.remove();
+// }
