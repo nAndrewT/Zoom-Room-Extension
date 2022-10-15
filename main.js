@@ -41,8 +41,9 @@ function renderLinks(links) {
     heading.setAttribute('class', 'name');
 
     newLink.href = link;
-    newLink.target = '_blank';
+    
     heading.innerText = name;
+    newLink.target = '_blank';
     text.innerText = `${link.slice(0, 25)}...`;
 
     newLink.append(heading, text);
