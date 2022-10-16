@@ -44,7 +44,7 @@ function renderLinks(links) {
     
     heading.innerText = name;
     newLink.target = '_blank';
-    text.innerText = `${link.slice(0, 25)}...`;
+    text.innerText = `${link.slice(0, 35)}...`;
 
     newLink.append(heading, text);
     listItem.append(newLink);

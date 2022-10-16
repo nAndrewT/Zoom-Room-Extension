@@ -72,6 +72,7 @@ p {
   margin-left: auto;
   margin-right: auto;
   padding: 0.25rem;
+  margin-top: 0.5rem;
   background-color: #f26d21;
   color: rgb(29, 40, 89);
   text-transform: uppercase;
@@ -84,6 +85,7 @@ p {
 .zoom-link {
   display: flex;
   justify-content: space-between;
+  padding-left: 10px;
 }
 
 .delete-button {
@@ -94,11 +96,14 @@ p {
   background-color: transparent;
   color: red;
   border: none;
+  padding-right: 10px;
 }
+.delete-button:hover {cursor: pointer;}
 
 .navigation {
   display: flex;
   justify-content: end;
+  padding-right: 15px;
   align-items: center;
   height: 45px;
   background-color: #2d8cff;
